@@ -1,5 +1,5 @@
 const config = {
-    server: "http://localhost:8000/api/v1",
+    server: "https://ecommerce-api-bl.glitch.me/api/v1"
 };
 
 export default config;

@@ -16,6 +16,7 @@ const ProductList = ({ category }) => {
         getProducts();
     }, [category]);
 
+
     return (
         <section className="px-5 w-full">
             <h2 className="text-3xl font-bold mt-6 mb-3">Productos</h2>

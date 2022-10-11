@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import socketIO from 'socket.io-client';
 import useUser from '../../context/userContext';
-const socket = socketIO.connect('http://localhost:8000');
+
+const socket = socketIO.connect('https://ecommerce-api-bl.glitch.me/');
 
 
 export default function Chat() {
