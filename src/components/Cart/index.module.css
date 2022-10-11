@@ -1,0 +1,16 @@
+.cartItem {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 4px #00000030;
+    padding: 5px 10px;
+    margin: 10px 0;
+    color:black;
+}
+
+.cartItemInfo {
+    margin: 0 auto 0 2px;
+}
+
+.cartItem  button {
+    margin-right: 5px;
+}

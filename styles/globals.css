@@ -1,26 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #333;
+  background-image: radial-gradient(ellipse at bottom left, rgba(0, 163, 203, 1) 40%, rgba(0, 163, 203, 0) 40%),
+    radial-gradient(ellipse at top right, rgba(0, 163, 203, 1) 30%, rgba(0, 163, 203, 0) 30%),
+    linear-gradient(to right, rgba(98, 87, 147, 1) 0%, rgba(98, 87, 147, 1) 33%, rgba(213, 93, 100, 1) 33%, rgba(213, 93, 100, 1) 66%, rgba(228, 145, 41, 1) 66%);
+  background-size: 50% 30%;
+  background-attachment: fixed;
+  overflow-y: scroll;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.containerWithAside {
+  display: grid;
+  margin: auto;
+  grid-template:
+    "header" 80px
+    "main" auto
+    "aside" auto
+    "footer" 120px;
+  background: #ffffff50;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 20px #6a6a6a;
+  gap: 15px;
+  min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media (min-width: 1024px) {
+  .containerWithAside {
+    grid-template:
+      "header header" 80px
+      "main   aside" auto
+      "footer footer" 120px /
+      auto 380px;
   }
-  body {
-    color: white;
-    background: black;
-  }
+}
+
+.containerWithoutAside {
+  display: grid;
+  margin: auto;
+  grid-template:
+    "header" 80px
+    "main " auto
+    "footer" 120px;
+  background: #ffffff50;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 20px #6a6a6a;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  padding: .5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 15px;
+}
+
+aside {
+  grid-area: aside;
+  padding: .5rem 15px;
+}
+
+footer {
+  grid-area: footer;
+  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  color: white
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(241, 172, 22);
+  /* background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%); */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(93, 30, 194);
+  border-radius: 10px 0 0 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(178, 138, 241);
 }
